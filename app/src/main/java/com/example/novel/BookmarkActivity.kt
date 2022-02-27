@@ -45,7 +45,10 @@ class BookmarkActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                var des = Intent(this@BookmarkActivity, MainActivity::class.java)
+                var des = PdfViewerActivity.launchPdfFromPath(
+                    this@BookmarkActivity, "novel.pdf",
+                    "novel", "assets", true, true
+                )
                 des.putExtra("pageNumber", list.get(position).id)
                 startActivity(des)
                 finish()

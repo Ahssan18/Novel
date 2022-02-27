@@ -21,12 +21,21 @@ class HomeActivity : AppCompatActivity() {
         clickListener()
     }
 
+    private fun launchPdf() {
+        startActivity(
+            PdfViewerActivity.launchPdfFromPath(
+                this, "novel.pdf",
+                "quote", "assets", true, true
+            )
+        )
+    }
+
     private fun clickListener() {
         btnBookmark.setOnClickListener {
             startActivity(Intent(this, BookmarkActivity::class.java))
         }
         btnReading.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            launchPdf()
         }
         btnShareApp.setOnClickListener {
             val sendIntent = Intent()
