@@ -295,7 +295,7 @@ class PdfViewerActivity : AppCompatActivity() {
             prf.moveToSpecificPosition(prf.currentPage - 2)
             spinner.setSelection(prf.currentPage - 2)
             setSelecttion(prf.currentPage - 1)
-            funAddClick();
+//            funAddClick();
 
 
         }
@@ -304,11 +304,12 @@ class PdfViewerActivity : AppCompatActivity() {
             setSelecttion(prf.currentPage + 1)
             if (prf.totalPageCount > prf.currentPage)
                 spinner.setSelection(prf.currentPage)
-            funAddClick();
+//            funAddClick();
         }
     }
 
     private fun funAddClick() {
+        Log.d("TAG", "funAddClick.")
         clickCount += 1
         if (clickCount == 3) {
             if (mInterstitialAd != null) {
